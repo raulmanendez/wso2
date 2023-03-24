@@ -1,3 +1,16 @@
+ARG USERNAME=raul_manendez
+ARG USER_UID=1000
+ARG USER_GID=$USER_UID
+
+# Create the user
+RUN useradd --uid $USER_UID --gid $USER_GID -m $USERNAME \
+# ********************************************************
+# * Anything else you want to do like clean up goes here *
+# ********************************************************
+
+# [Optional] Set the default user. Omit if you want to keep the default as root.
+USER $USERNAME
+
 # the first stage of our build will use a maven 3.6.1 parent image
 FROM maven:3.6.1-jdk-8-alpine AS MAVEN_BUILD
 # copy the pom and src code to the container
