@@ -1,5 +1,5 @@
 ARG USERNAME=raul_manendez
-ARG USER_UID=15015
+ARG USER_UID=100001
 ARG USER_GID=$USER_UID
 
 # Create the user
